@@ -1,0 +1,416 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*
+*CONTENTS
+*
+*SETTINGS
+*variables..................变量集中储存
+*mixin.......................mixin集中储存
+*TOOLS
+*
+*COMPONNETS
+*reset.........................compass内置重置样式文件
+*
+*BUSINESS
+*
+*BASE
+*screen.scss...................当前站点
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/*color*/
+.icons-sprite {
+  background-image: url('../images/icons-s02450bd1ab.png');
+  background-repeat: no-repeat; }
+
+html {
+  font-size: 62.5%; }
+
+body:after {
+  content: '.';
+  height: 0;
+  display: block;
+  overflow: hidden;
+  clear: both; }
+
+.wrap {
+  overflow: hidden; }
+
+.personal_info {
+  font-size: 1.6rem;
+  width: 35%;
+  float: left;
+  background-color: #0BB6EF;
+  padding-bottom: 10000px;
+  margin-bottom: -9950px; }
+
+.exper_info {
+  width: 65%;
+  font-size: 1.6rem;
+  float: right;
+  background-color: #B1B4BC;
+  padding-bottom: 10000px;
+  margin-bottom: -9950px; }
+
+.personal_info .picture {
+  margin: 5rem auto;
+  width: 30rem;
+  height: 38rem;
+  border-radius: 20px;
+  background-image: url("../images/myphoto/myphoto.png");
+  background-position-y: 30%;
+  background-size: cover; }
+
+.personal_info .basic_info {
+  width: 85%;
+  margin: 5rem auto; }
+  .personal_info .basic_info figcaption {
+    display: inline-block;
+    width: 80%; }
+    .personal_info .basic_info figcaption h1 {
+      width: 100%;
+      border: 1px solid #FFFF08;
+      border-radius: 15px;
+      margin-left: 30px;
+      background-color: #FFFF08; }
+    .personal_info .basic_info figcaption h1 span:first-child {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url("../images/icons/basic.png");
+      background-position: center,center;
+      background-size: contain;
+      background-color: white;
+      border-radius: 15px; }
+    .personal_info .basic_info figcaption h1 span:last-child {
+      color: #0BB6EF;
+      font-size: 2rem;
+      font-weight: bold;
+      vertical-align: super;
+      margin-left: 15px; }
+  .personal_info .basic_info ul {
+    margin-left: 45px;
+    border-left: 1px solid white;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+    .personal_info .basic_info ul li + li {
+      margin-top: 15px; }
+    .personal_info .basic_info ul li {
+      padding-left: 30px; }
+
+.personal_info .edu_info {
+  width: 85%;
+  margin: 5rem auto; }
+  .personal_info .edu_info figcaption {
+    display: inline-block;
+    width: 80%; }
+    .personal_info .edu_info figcaption h1 {
+      width: 100%;
+      border: 1px solid #FFFF08;
+      border-radius: 15px;
+      margin-left: 30px;
+      background-color: #FFFF08; }
+    .personal_info .edu_info figcaption h1 span:first-child {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url("../images/icons/edu.png");
+      background-position: center,center;
+      background-size: contain;
+      background-color: white;
+      border-radius: 15px; }
+    .personal_info .edu_info figcaption h1 span:last-child {
+      color: #0BB6EF;
+      font-size: 2rem;
+      font-weight: bold;
+      vertical-align: super;
+      margin-left: 15px; }
+  .personal_info .edu_info ul {
+    margin-left: 45px;
+    border-left: 1px solid white;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+    .personal_info .edu_info ul li + li {
+      margin-top: 15px; }
+    .personal_info .edu_info ul li {
+      padding-left: 30px; }
+
+.personal_info .skill_info {
+  width: 85%;
+  margin: 5rem auto; }
+  .personal_info .skill_info figcaption {
+    display: inline-block;
+    width: 80%; }
+    .personal_info .skill_info figcaption h1 {
+      width: 100%;
+      border: 1px solid #FFFF08;
+      border-radius: 15px;
+      margin-left: 30px;
+      background-color: #FFFF08; }
+    .personal_info .skill_info figcaption h1 span:first-child {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url("../images/icons/skill.png");
+      background-position: center,center;
+      background-size: contain;
+      background-color: white;
+      border-radius: 15px; }
+    .personal_info .skill_info figcaption h1 span:last-child {
+      color: #0BB6EF;
+      font-size: 2rem;
+      font-weight: bold;
+      vertical-align: super;
+      margin-left: 15px; }
+  .personal_info .skill_info ul {
+    margin-left: 45px;
+    border-left: 1px solid white;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+    .personal_info .skill_info ul li + li {
+      margin-top: 15px; }
+    .personal_info .skill_info ul li {
+      padding-left: 30px; }
+
+.personal_info .skill_info ul li progress {
+  width: 60%;
+  border: none;
+  background-color: whitesmoke;
+  color: #B4F222;
+  /*IE10*/
+  margin-left: 10px; }
+
+progress::-moz-progress-bar {
+  background: #B4F222; }
+
+progress::-webkit-progress-bar {
+  background: whitesmoke; }
+
+progress::-webkit-progress-value {
+  background: #B4F222; }
+
+.exper_info figure {
+  margin: 50px auto;
+  margin-bottom: 15px; }
+
+.exper_info .job_info {
+  background-color: white;
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px; }
+  .exper_info .job_info h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid #0BB6EF;
+    border-radius: 15px;
+    margin-left: 0px;
+    background-color: #0BB6EF; }
+  .exper_info .job_info h1 span:first-child {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/icons/job.png");
+    background-position: center,center;
+    background-size: contain;
+    background-color: #0BB6EF;
+    border-radius: 15px; }
+  .exper_info .job_info h1 span:last-child {
+    color: #FFFF08;
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: super;
+    margin-left: 15px; }
+  .exper_info .job_info ul {
+    margin-left: 15px;
+    border-left: 1px solid #0BB6EF;
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+    .exper_info .job_info ul li + li {
+      margin-top: 15px; }
+    .exper_info .job_info ul li {
+      padding-left: 30px; }
+
+.exper_info .learn_exper {
+  background-color: white;
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px; }
+  .exper_info .learn_exper h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid #0BB6EF;
+    border-radius: 15px;
+    margin-left: 0px;
+    background-color: #0BB6EF; }
+  .exper_info .learn_exper h1 span:first-child {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/icons/exper.png");
+    background-position: center,center;
+    background-size: contain;
+    background-color: #0BB6EF;
+    border-radius: 15px; }
+  .exper_info .learn_exper h1 span:last-child {
+    color: #FFFF08;
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: super;
+    margin-left: 15px; }
+  .exper_info .learn_exper ul {
+    margin-left: 15px;
+    border-left: 1px solid #0BB6EF;
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+    .exper_info .learn_exper ul li + li {
+      margin-top: 15px; }
+    .exper_info .learn_exper ul li {
+      padding-left: 30px; }
+
+.exper_info .learn_exper ul li {
+  display: inline-block;
+  margin-left: -25px; }
+  .exper_info .learn_exper ul li ul {
+    margin-top: 5px;
+    border-left: none; }
+    .exper_info .learn_exper ul li ul li {
+      vertical-align: top;
+      margin-top: 0px; }
+
+.exper_info .produce_exhib {
+  background-color: white;
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px; }
+  .exper_info .produce_exhib h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid #0BB6EF;
+    border-radius: 15px;
+    margin-left: 0px;
+    background-color: #0BB6EF; }
+  .exper_info .produce_exhib h1 span:first-child {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/icons/produce.png");
+    background-position: center,center;
+    background-size: contain;
+    background-color: #0BB6EF;
+    border-radius: 15px; }
+  .exper_info .produce_exhib h1 span:last-child {
+    color: #FFFF08;
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: super;
+    margin-left: 15px; }
+  .exper_info .produce_exhib ul {
+    margin-left: 15px;
+    border-left: 1px solid #0BB6EF;
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+    .exper_info .produce_exhib ul li + li {
+      margin-top: 15px; }
+    .exper_info .produce_exhib ul li {
+      padding-left: 30px; }
+
+.exper_info .self_intro {
+  background-color: white;
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px; }
+  .exper_info .self_intro h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid #0BB6EF;
+    border-radius: 15px;
+    margin-left: 0px;
+    background-color: #0BB6EF; }
+  .exper_info .self_intro h1 span:first-child {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/icons/intro.png");
+    background-position: center,center;
+    background-size: contain;
+    background-color: #0BB6EF;
+    border-radius: 15px; }
+  .exper_info .self_intro h1 span:last-child {
+    color: #FFFF08;
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: super;
+    margin-left: 15px; }
+  .exper_info .self_intro ul {
+    margin-left: 15px;
+    border-left: 1px solid #0BB6EF;
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+    .exper_info .self_intro ul li + li {
+      margin-top: 15px; }
+    .exper_info .self_intro ul li {
+      padding-left: 30px; }
+  .exper_info .self_intro p {
+    margin: 15px auto;
+    padding: 0 20px;
+    line-height: 2rem;
+    text-indent: 2em;
+    font-variant-ligatures: initial; }

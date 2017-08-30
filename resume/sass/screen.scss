@@ -1,0 +1,220 @@
+@charset "utf-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*
+*CONTENTS
+*
+*SETTINGS
+*variables..................变量集中储存
+*mixin.......................mixin集中储存
+*TOOLS
+*
+*COMPONNETS
+*reset.........................compass内置重置样式文件
+*
+*BUSINESS
+*
+*BASE
+*screen.scss...................当前站点
+*/
+@import 'compass/reset';
+@import 'variables';
+@import 'mixin';
+@import 'compass/utilities/sprites';
+@import 'icons/*.png';
+html {
+    font-size: 62.5%;     //16px * 0.625 = 10px;
+}
+body:after {
+    @include clearfix;
+}
+.wrap {
+    overflow: hidden;
+}
+.personal_info {
+    font-size: 1.6rem;
+    width:35%;
+    float: left;
+    background-color: $mainColor;
+    padding-bottom: 10000px;
+    margin-bottom: -9950px;
+
+}
+
+.exper_info {
+    width: 65%;
+    font-size: 1.6rem;
+    float: right;
+    background-color: $backColor;
+    padding-bottom: 10000px;
+    margin-bottom: -9950px;
+    
+    
+}
+
+.personal_info .picture {
+    margin: 5rem auto;
+    width:30rem;
+    height: 38rem;
+    border-radius: 20px;
+    background-image: url("../images/myphoto/myphoto.png");
+    background-position-y: 30%;
+    background-size: cover;
+    
+}
+.personal_info .basic_info {
+    width:85%;
+    margin:5rem auto;
+    figcaption {
+        display:inline-block;
+        width:80%;
+        
+        h1 {
+            width:100%;
+            border:1px solid $subColor;
+            border-radius: 15px;
+            margin-left: 30px;
+            background-color: $subColor;
+        }
+        h1 span:first-child {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+
+            background-image: url("../images/icons/basic.png");
+            background-position: center,center;
+            background-size: contain;
+            background-color:white;
+            border-radius: 15px;
+        }
+        h1 span:last-child {
+            color:$mainColor;
+            font-size: 2rem;
+            font-weight:bold;
+            vertical-align: super;
+            margin-left: 15px;
+        }
+    }
+    ul {
+        margin-left: 45px;
+        border-left:1px solid white;
+        color:white;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        li + li {
+            margin-top: 15px;
+        }
+        li {
+            padding-left: 30px;
+        }
+    }
+}
+.personal_info .edu_info {
+    @include basic_info_layout('../images/icons/edu.png');
+}
+
+.personal_info .skill_info {
+    @include basic_info_layout('../images/icons/skill.png');
+}
+.personal_info .skill_info ul li progress {
+    width: 60%;
+    border: none;  
+    background-color:whitesmoke;
+    color: #B4F222; /*IE10*/
+    margin-left: 10px;
+}
+progress::-moz-progress-bar { background:#B4F222; }
+progress::-webkit-progress-bar { background: whitesmoke; }
+progress::-webkit-progress-value  { background: #B4F222; }
+
+.exper_info figure{
+    margin: 50px auto;
+    margin-bottom: 15px;
+}
+.exper_info .job_info {
+    background-color: white;
+    width:90%;
+    border-radius: 5px;
+    padding: 10px;
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+         border:1px solid $mainColor;
+        border-radius: 15px;
+        margin-left: 0px;
+        background-color: $mainColor;
+    }
+    h1 span:first-child {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/icons/job.png");
+        background-position: center,center;
+        background-size: contain;
+        background-color:$mainColor;
+        border-radius: 15px;
+    }
+     h1 span:last-child {
+        color:$subColor;
+        font-size: 2rem;
+        font-weight:bold;
+        vertical-align: super;
+        margin-left: 15px;
+        }
+    ul {
+        margin-left: 15px;
+        border-left:1px solid $mainColor;
+        color:black;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        li + li {
+            margin-top: 15px;
+        }
+        li {
+            padding-left: 30px;
+        }
+    }
+}
+
+.exper_info .learn_exper {
+    @include job_info_layout('../images/icons/exper.png');
+    margin-top: 15px;
+}
+
+
+.exper_info .learn_exper ul {
+    
+    li {
+    display: inline-block;
+    margin-left: -25px;
+    
+    ul {
+        margin-top: 5px;
+        border-left: none;
+        li {
+            vertical-align: top;
+            margin-top: 0px;
+        }
+    }
+    }
+}
+
+.exper_info .produce_exhib {
+    @include  job_info_layout('../images/icons/produce.png');
+    margin-top: 15px;
+}
+
+.exper_info .self_intro {
+    @include job_info_layout('../images/icons/intro.png');
+    margin-top: 15px;
+    p {
+        margin: 15px auto;
+        padding: 0 20px;
+        line-height: 2rem;
+        text-indent: 2em;
+        font-variant-ligatures:initial;
+    }
+    
+}

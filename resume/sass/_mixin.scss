@@ -1,0 +1,100 @@
+@mixin clearfix {
+    content: '.';
+    height: 0;
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
+@mixin basic_info_layout($theUrl){
+    width:85%;
+    margin:5rem auto;
+    figcaption {
+        display:inline-block;
+        width:80%;
+        
+        h1 {
+            width:100%;
+            border:1px solid $subColor;
+            border-radius: 15px;
+            margin-left: 30px;
+            background-color: $subColor;
+        }
+        h1 span:first-child {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+
+            background-image: url($theUrl);
+            background-position: center,center;
+            background-size: contain;
+            background-color:white;
+            border-radius: 15px;
+        }
+        h1 span:last-child {
+            color:$mainColor;
+            font-size: 2rem;
+            font-weight:bold;
+            vertical-align: super;
+            margin-left: 15px;
+        }
+    }
+    ul {
+        margin-left: 45px;
+        border-left:1px solid white;
+        color:white;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        li + li {
+            margin-top: 15px;
+        }
+        li {
+            padding-left: 30px;
+        }
+    }
+}
+
+@mixin job_info_layout($theUrl2) {
+     background-color: white;
+    width:90%;
+    border-radius: 5px;
+    padding: 10px;
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+         border:1px solid $mainColor;
+        border-radius: 15px;
+        margin-left: 0px;
+        background-color: $mainColor;
+    }
+    h1 span:first-child {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url($theUrl2);
+        background-position: center,center;
+        background-size: contain;
+        background-color:$mainColor;
+        border-radius: 15px;
+    }
+     h1 span:last-child {
+        color:$subColor;
+        font-size: 2rem;
+        font-weight:bold;
+        vertical-align: super;
+        margin-left: 15px;
+        }
+    ul {
+        margin-left: 15px;
+        border-left:1px solid $mainColor;
+        color:black;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        li + li {
+            margin-top: 15px;
+        }
+        li {
+            padding-left: 30px;
+        }
+    }
+}
